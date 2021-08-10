@@ -3,7 +3,7 @@ import { LocalizationContext } from "./LanguageContext";
 import { UserContext } from "./UserContext";
 
 function Modal(props) {
-  const { langString } = useContext(LocalizationContext);
+  const { langString, setLangString, langs } = useContext(LocalizationContext);
   const [tempUserInfo, setTempUserInfo] = useState({
     userName: "",
     userEmail: "",
@@ -24,21 +24,23 @@ function Modal(props) {
     setTempUserInfo((prevVal) => {
       return { ...prevVal, [e.target.name]: e.target.value };
     });
-    console.log(tempUserInfo);
+    console.log(tempUserInfo.userName);
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
     setUserName(tempUserInfo.userName);
     setUserEmail(tempUserInfo.userEmail);
     setUserPassword(tempUserInfo.userPassword);
     setUserLanguage(tempUserInfo.language);
-    setIsUserLoggedIn("none");
-    setTempUserInfo({
-      userName: "",
-      userEmail: "",
-      userPassword: "",
-      language: "",
+    setLangString(() => {
+      let lang;
+      if (tempUserInfo.language === "tr") {
+        lang = langs.tr;
+      } else {
+        lang = langs.en;
+      }
+      return lang;
     });
+    handleClose(e);
   };
   const handleClose = (e) => {
     e.preventDefault();
@@ -82,18 +84,12 @@ function Modal(props) {
       <fieldset onChange={handleChange}>
         <legend>{langString.formLanguageLabel}</legend>
         <p>
-          <label htmlFor="english">English</label>
-          <input
-            type="radio"
-            id="english"
-            name="language"
-            value="English"
-            checked
-          />
+          <label htmlFor="en">English</label>
+          <input type="radio" id="en" name="language" value="en" />
         </p>
         <p>
-          <label htmlFor="turkish">Türkçe</label>
-          <input type="radio" id="turkish" name="language" value="Türkçe" />
+          <label htmlFor="tr">Türkçe</label>
+          <input type="radio" id="tr" name="language" value="tr" />
         </p>
       </fieldset>
       <button type="submit" onClick={handleSubmit}>

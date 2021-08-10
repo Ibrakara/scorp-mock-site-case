@@ -34,10 +34,10 @@ function Nav(props) {
     setLangString(langs.tr);
   };
   const handleLogout = () => {
-    setUserName(null);
-    setUserEmail(null);
-    setUserPassword(null);
-    setUserLanguage(null);
+    setUserName("");
+    setUserEmail("");
+    setUserPassword("");
+    setUserLanguage("");
   };
 
   return (
@@ -61,13 +61,11 @@ function Nav(props) {
           <button onClick={changeLangToEn}>En</button>
         </li>
         <li>
-          {userName === null ? (
+          {userName === "" ? (
             <button onClick={showHideModal}>{langString.loginButton}</button>
           ) : (
             <div>
-              <button onClick={changeDropdownVisibility}>
-                {showDropdow ? "X" : userName}
-              </button>
+              <button onClick={changeDropdownVisibility}>{userName}</button>
               {showDropdow ? (
                 <div className="dropdown">
                   <p>{userEmail}</p>

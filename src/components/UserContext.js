@@ -1,12 +1,13 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext();
 
 export function UserProvider(props) {
-  const [userName, setUserName] = useState(null);
-  const [userEmail, setUserEmail] = useState(null);
-  const [userPassword, setUserPassword] = useState(null);
-  const [userLanguage, setUserLanguage] = useState(null);
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [userLanguage, setUserLanguage] = useState("");
+
   return (
     <UserContext.Provider
       value={{
