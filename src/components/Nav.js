@@ -2,12 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { LocalizationContext } from "./LanguageContext";
 import scorpImg from "../styles/images/scorp.png";
+import { UserContext } from "./UserContext";
 
-function Nav() {
-  const { langString, changeLangToEn, changeLangToTr } =
-    useContext(LocalizationContext);
-  let location = useLocation();
+function Nav(props) {
+  const [showDropdow, setShowDropdown] = useState(false);
   const [pageLocation, setPageLocation] = useState("/");
+  const { langString, setLangString, langs } = useContext(LocalizationContext);
+  const {
+    userName,
+    setUserName,
+    userEmail,
+    setUserEmail,
+    setUserPassword,
+    userLanguage,
+    setUserLanguage,
+  } = useContext(UserContext);
+  let location = useLocation();
+  const showHideModal = props.modalDisplay;
   useEffect(() => {
     if (location.pathname === "/") {
       setPageLocation("/");
@@ -15,6 +26,19 @@ function Nav() {
       setPageLocation("contact");
     }
   }, [location]);
+  const changeDropdownVisibility = () => setShowDropdown(!showDropdow);
+  const changeLangToEn = () => {
+    setLangString(langs.en);
+  };
+  const changeLangToTr = () => {
+    setLangString(langs.tr);
+  };
+  const handleLogout = () => {
+    setUserName(null);
+    setUserEmail(null);
+    setUserPassword(null);
+    setUserLanguage(null);
+  };
 
   return (
     <nav>
@@ -35,6 +59,25 @@ function Nav() {
         <li>
           <button onClick={changeLangToTr}>Tr</button>
           <button onClick={changeLangToEn}>En</button>
+        </li>
+        <li>
+          {userName === null ? (
+            <button onClick={showHideModal}>{langString.loginButton}</button>
+          ) : (
+            <div>
+              <button onClick={changeDropdownVisibility}>
+                {showDropdow ? "X" : userName}
+              </button>
+              {showDropdow ? (
+                <div className="dropdown">
+                  <p>{userEmail}</p>
+                  <button onClick={handleLogout}>
+                    {langString.logOutButton}
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          )}
         </li>
       </ul>
     </nav>
