@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/scorp-mock-site-case/static/css/main.eced2063.chunk.css",
-    "main.js": "/scorp-mock-site-case/static/js/main.ca965715.chunk.js",
-    "main.js.map": "/scorp-mock-site-case/static/js/main.ca965715.chunk.js.map",
+    "main.js": "/scorp-mock-site-case/static/js/main.a1bbdd39.chunk.js",
+    "main.js.map": "/scorp-mock-site-case/static/js/main.a1bbdd39.chunk.js.map",
     "runtime-main.js": "/scorp-mock-site-case/static/js/runtime-main.95979b26.js",
     "runtime-main.js.map": "/scorp-mock-site-case/static/js/runtime-main.95979b26.js.map",
     "static/js/2.920f3239.chunk.js": "/scorp-mock-site-case/static/js/2.920f3239.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.95979b26.js",
     "static/js/2.920f3239.chunk.js",
     "static/css/main.eced2063.chunk.css",
-    "static/js/main.ca965715.chunk.js"
+    "static/js/main.a1bbdd39.chunk.js"
   ]
 }
