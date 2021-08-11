@@ -13,7 +13,7 @@ function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState("none");
   const showHideModal = () => {
     if (isUserLoggedIn === "none") {
-      setIsUserLoggedIn("block");
+      setIsUserLoggedIn("flex");
     } else {
       setIsUserLoggedIn("none");
     }

@@ -3,7 +3,7 @@ import { LocalizationContext } from "./LanguageContext";
 import { UserContext } from "./UserContext";
 
 function Contact(props) {
-  const { langString, setLangString, langs } = useContext(LocalizationContext);
+  const { langString } = useContext(LocalizationContext);
   const { userName, userEmail } = useContext(UserContext);
   const [contactInfo, setContactInfo] = useState({
     name: "",
@@ -16,7 +16,7 @@ function Contact(props) {
     setContactInfo((prevValue) => {
       return { ...prevValue, name: userName, email: userEmail };
     });
-  }, [userName]);
+  }, [userName, userEmail]);
   const handleContactInfoChange = (e) => {
     let inputValue = e.target.value;
     setContactInfo((prevValue) => {
@@ -52,10 +52,12 @@ function Contact(props) {
     }
   };
   return (
-    <div>
-      <form onSubmit={handleContactFormSubmit}>
-        <h4>{langString.contactFormTitle}</h4>
-        <label htmlFor="name">{langString.formNameLabel}</label>
+    <div className="contact-page-container">
+      <form className="contact-form" onSubmit={handleContactFormSubmit}>
+        <h4 id="contact-form-title">{langString.contactFormTitle}</h4>
+        <label className="contac-form-label" htmlFor="name">
+          {langString.formNameLabel}
+        </label>
         <input
           type="text"
           name="name"
@@ -63,14 +65,18 @@ function Contact(props) {
           value={contactInfo.name}
           onChange={handleContactInfoChange}
         />
-        <label htmlFor="email">{langString.formEmailLabel}</label>
+        <label className="contac-form-label" htmlFor="email">
+          {langString.formEmailLabel}
+        </label>
         <input
           type="email"
           name="email"
           onChange={handleContactInfoChange}
           value={contactInfo.email}
         />
-        <label htmlFor="phonenumber">{langString.formPhoneLabel}</label>
+        <label className="contac-form-label" htmlFor="phonenumber">
+          {langString.formPhoneLabel}
+        </label>
         <input
           type="tel"
           name="phonenumber"
@@ -79,7 +85,9 @@ function Contact(props) {
           value={contactInfo.phonenumber}
           onChange={handleContactInfoChange}
         />
-        <label htmlFor="country_code">{langString.formCountryLabel}</label>
+        <label className="contac-form-label" htmlFor="country_code">
+          {langString.formCountryLabel}
+        </label>
         <input
           type="text"
           name="country_code"
@@ -88,7 +96,9 @@ function Contact(props) {
           onChange={handleContactInfoChange}
         />
         <datalist id="countries">{countryList}</datalist>
-        <label htmlFor="text">Subject</label>
+        <label className="contac-form-label" htmlFor="text">
+          Subject
+        </label>
         <textarea
           id="subject"
           name="text"
@@ -96,7 +106,9 @@ function Contact(props) {
           value={contactInfo.text}
           onChange={handleContactInfoChange}
         />
-        <button type="submit">{langString.formSendButton}</button>
+        <button className="contact-form-submit-button" type="submit">
+          {langString.formSendButton}
+        </button>
       </form>
     </div>
   );

@@ -4,9 +4,9 @@ import { LocalizationContext } from "./LanguageContext";
 function Home(props) {
   const { langString } = useContext(LocalizationContext);
   return (
-    <div>
-      <h1>{langString.dummyTitle}</h1>
-      <p>{langString.dummyText}</p>
+    <div className="home-container">
+      <h1 id="home-heading">{langString.dummyTitle}</h1>
+      <p id="home-text">{langString.dummyText}</p>
     </div>
   );
 }

@@ -7,9 +7,11 @@ export function LocalizationProvider(props) {
     en: {
       homeButton: "Home",
       contactButton: "Contact",
-      homePageName: "Scorp Mock Site",
+      homePageName: "Circle Mock Site",
       contactPageName: "Contact",
       loginButton: "Login",
+      changeLangButton: "Change Language",
+
       emailButton: "E-Mail",
       userNameButton: "User Name",
       logOutButton: "Log Out",
@@ -41,9 +43,10 @@ export function LocalizationProvider(props) {
     tr: {
       homeButton: "Ana Sayfa",
       contactButton: "İletişim",
-      homePageName: "Scorp Mock Site",
+      homePageName: "Circle Mock Site",
       contactPageName: "İletişim",
       loginButton: "Giriş",
+      changeLangButton: "Dili Değiştir",
       userNameButton: "Kullanıcı Adı",
       logOutButton: "Çıkış",
       emailButton: "E-Posta",
@@ -57,7 +60,7 @@ export function LocalizationProvider(props) {
       formSendButton: "Gönder",
       formLanguageLabel: "Dil",
       formExitButton: "Kapat",
-      contactFormTitle: "Contact Form",
+      contactFormTitle: "İletişim Formu",
       dummyText:
         "Avrupa dilleri aynı ailenin üyeleridir. Ayrı varlıkları bir efsanedir. Avrupa, bilim, müzik, spor vb. için aynı kelimeleri kullanır. Diller yalnızca gramerleri, telaffuzları ve en yaygın sözcükleri bakımından farklılık gösterir. Herkes yeni bir ortak dilin neden istendiğini anlıyor: pahalı çevirmenlere ödeme yapmayı reddedebiliriz. Bunu başarmak için tek tip gramer, telaffuz ve daha yaygın kelimelere sahip olmak gerekir. Birkaç dil birleşirse, ortaya çıkan dilin grameri, tek tek dillerin gramerinden daha basit ve düzenlidir. Yeni ortak dil, mevcut Avrupa dillerinden daha basit ve düzenli olacaktır. Occidental kadar basit olacak; aslında, Batılı olacak. Cambridge'den şüpheci bir arkadaşımın bana Occidental'ın ne olduğunu söylediği gibi, bir İngiliz için basitleştirilmiş İngilizce gibi görünecektir. Avrupa dilleri aynı ailenin üyeleridir. Ayrı varlıkları bir efsanedir. Avrupa, bilim, müzik, spor vb. için aynı kelimeleri kullanır. Diller yalnızca gramerleri, telaffuzları ve en yaygın sözcükleri bakımından farklılık gösterir. Herkes yeni bir ortak dilin neden istendiğini anlıyor: pahalı çevirmenlere ödeme yapmayı reddedebiliriz.",
       dummyTitle: "Avrupa Dilleri",
