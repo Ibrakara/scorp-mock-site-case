@@ -26,8 +26,15 @@ function App() {
             <Nav modalDisplay={showHideModal} />
             <Modal userLogStatus={{ isUserLoggedIn, setIsUserLoggedIn }} />
             <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/contact" component={Contact} />
+              <Route
+                path={process.env.PUBLIC_URL + "/"}
+                exact
+                component={Home}
+              />
+              <Route
+                path={process.env.PUBLIC_URL + "/contact"}
+                component={Contact}
+              />
             </Switch>
             <Footer />
           </div>
