@@ -22,7 +22,6 @@ function Contact(props) {
     setContactInfo((prevValue) => {
       return { ...prevValue, [e.target.name]: inputValue };
     });
-    console.log(e);
     if (e.target.name === "email") {
       validateEmail(inputValue, e);
     }
