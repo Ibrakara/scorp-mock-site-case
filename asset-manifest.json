@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/scorp-mock-site-case/static/css/main.eced2063.chunk.css",
+    "main.js": "/scorp-mock-site-case/static/js/main.d53cdcbf.chunk.js",
+    "main.js.map": "/scorp-mock-site-case/static/js/main.d53cdcbf.chunk.js.map",
+    "runtime-main.js": "/scorp-mock-site-case/static/js/runtime-main.95979b26.js",
+    "runtime-main.js.map": "/scorp-mock-site-case/static/js/runtime-main.95979b26.js.map",
+    "static/js/2.920f3239.chunk.js": "/scorp-mock-site-case/static/js/2.920f3239.chunk.js",
+    "static/js/2.920f3239.chunk.js.map": "/scorp-mock-site-case/static/js/2.920f3239.chunk.js.map",
+    "index.html": "/scorp-mock-site-case/index.html",
+    "static/css/main.eced2063.chunk.css.map": "/scorp-mock-site-case/static/css/main.eced2063.chunk.css.map",
+    "static/js/2.920f3239.chunk.js.LICENSE.txt": "/scorp-mock-site-case/static/js/2.920f3239.chunk.js.LICENSE.txt",
+    "static/media/circle.c317b5e1.png": "/scorp-mock-site-case/static/media/circle.c317b5e1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95979b26.js",
+    "static/js/2.920f3239.chunk.js",
+    "static/css/main.eced2063.chunk.css",
+    "static/js/main.d53cdcbf.chunk.js"
+  ]
+}
