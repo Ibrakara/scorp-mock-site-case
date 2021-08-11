@@ -23,10 +23,10 @@ function Nav(props) {
     setIsHamburgerOper(!isHamburgerOpen);
   };
   useEffect(() => {
-    if (location.pathname === "/") {
-      setPageLocation("/");
+    if (location.pathname === `${process.env.PUBLIC_URL}/`) {
+      setPageLocation(`${process.env.PUBLIC_URL}/`);
     } else {
-      setPageLocation("contact");
+      setPageLocation(`${process.env.PUBLIC_URL}/contact`);
     }
   }, [location]);
   const changeLangToEn = () => {
@@ -46,7 +46,8 @@ function Nav(props) {
     <nav className="nav-container">
       <div className="nav-side" id="nav-leftside">
         <img className="nav-image" src={circle} alt="" />
-        {pageLocation === "/" ? (
+        {console.log(pageLocation)}
+        {pageLocation === `${process.env.PUBLIC_URL}/` ? (
           <h3 className="nav-heading">{langString.homePageName}</h3>
         ) : (
           <h3 className="nav-heading">{langString.contactPageName}</h3>
