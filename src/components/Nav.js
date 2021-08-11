@@ -54,10 +54,10 @@ function Nav(props) {
       </div>
 
       <ul className="nav-side" id="nav-rigthside">
-        <NavLink exact to="/">
+        <NavLink exact to={process.env.PUBLIC_URL + "/"}>
           <li>{langString.homeButton}</li>
         </NavLink>
-        <NavLink to="/contact">
+        <NavLink to={process.env.PUBLIC_URL + "/contact"}>
           <li>{langString.contactButton}</li>
         </NavLink>
         <li className="lang-dropdown">
