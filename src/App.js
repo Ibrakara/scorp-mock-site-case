@@ -6,7 +6,6 @@ import Contact from "./components/Contact";
 import Modal from "./components/Modal";
 import Footer from "./components/Footer";
 import { LocalizationProvider } from "./components/LanguageContext";
-import { UserProvider } from "./components/UserContext";
 import { useState } from "react";
 
 function App() {
