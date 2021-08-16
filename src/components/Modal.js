@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { LocalizationContext } from "./LanguageContext";
-import { UserContext } from "./UserContext";
 
 function Modal(props) {
   const { langString, setLangString, langs } = useContext(LocalizationContext);
@@ -12,7 +11,7 @@ function Modal(props) {
   });
   const { isUserLoggedIn, setIsUserLoggedIn } = props.userLogStatus;
   const { setUserName, setUserEmail, setUserPassword, setUserLanguage } =
-    useContext(UserContext);
+    props.userInfo;
   const handleChange = (e) => {
     setTempUserInfo((prevVal) => {
       return { ...prevVal, [e.target.name]: e.target.value };

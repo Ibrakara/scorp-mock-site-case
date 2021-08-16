@@ -10,6 +10,10 @@ import { UserProvider } from "./components/UserContext";
 import { useState } from "react";
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [userLanguage, setUserLanguage] = useState("");
   const [isUserLoggedIn, setIsUserLoggedIn] = useState("none");
   const showHideModal = () => {
     if (isUserLoggedIn === "none") {
@@ -20,26 +24,42 @@ function App() {
   };
   return (
     <LocalizationProvider>
-      <UserProvider>
-        <Router>
-          <div className="App">
-            <Nav modalDisplay={showHideModal} />
-            <Modal userLogStatus={{ isUserLoggedIn, setIsUserLoggedIn }} />
-            <Switch>
-              <Route
-                path={process.env.PUBLIC_URL + "/"}
-                exact
-                component={Home}
-              />
-              <Route
-                path={process.env.PUBLIC_URL + "/contact"}
-                component={Contact}
-              />
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </UserProvider>
+      <Router>
+        <div className="App">
+          <Nav
+            modalDisplay={showHideModal}
+            userInfo={{
+              userName,
+              setUserName,
+              userEmail,
+              setUserEmail,
+              setUserPassword,
+              setUserLanguage,
+            }}
+          />
+          <Modal
+            userLogStatus={{ isUserLoggedIn, setIsUserLoggedIn }}
+            userInfo={{
+              setUserName,
+              setUserEmail,
+              setUserLanguage,
+              setUserPassword,
+            }}
+          />
+          <Switch>
+            <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
+            <Route
+              render={(props) => {
+                return (
+                  <Contact {...props} userInfo={{ userName, userEmail }} />
+                );
+              }}
+              path={process.env.PUBLIC_URL + "/contact"}
+            />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     </LocalizationProvider>
   );
 }

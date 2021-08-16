@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { LocalizationContext } from "./LanguageContext";
 import circle from "../styles/images/circle.png";
-import { UserContext } from "./UserContext";
 import Hamburger from "./Hamburger";
 
 function Nav(props) {
@@ -15,7 +14,7 @@ function Nav(props) {
     setUserEmail,
     setUserPassword,
     setUserLanguage,
-  } = useContext(UserContext);
+  } = props.userInfo;
   let location = useLocation();
   const showHideModal = props.modalDisplay;
   const [isHamburgerOpen, setIsHamburgerOper] = useState(false);

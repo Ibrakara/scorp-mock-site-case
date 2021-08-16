@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { LocalizationContext } from "./LanguageContext";
-import { UserContext } from "./UserContext";
 
 function Contact(props) {
   const { langString } = useContext(LocalizationContext);
-  const { userName, userEmail } = useContext(UserContext);
+  const { userName, userEmail } = props.userInfo;
   const [contactInfo, setContactInfo] = useState({
     name: "",
     email: "",
